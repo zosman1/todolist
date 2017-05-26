@@ -1,5 +1,5 @@
-# React + Electron Starter
-_an example app for using React with Electron_
+# todolist
+_React and electron example app_
 
 ### UP & RUNNING
 * Run `npm install`
@@ -12,4 +12,3 @@ _an example app for using React with Electron_
 * Run `npm run postinstall` to compile all your assets into `dist/bundle.js`
 * Change the script tag in `dist/index.html` to use `bundle.js` as its source
 * Run `npm start` to start electron
-# todolist
