@@ -31,6 +31,8 @@
     "webpack-hot-middleware": "^2.10.0"
   },
   "dependencies": {
+    "devtron": "^1.4.0",
+    "electron-debug": "^1.1.0",
     "eslint": "^3.19.0",
     "react-fontawesome": "^1.6.1"
   }

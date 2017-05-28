@@ -10,6 +10,9 @@ var BrowserWindow = require("browser-window");
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
 
+// adds debug features like hotkeys for triggering dev tools and reload
+require("electron-debug")();
+
 function createWindow () {
   // Create the browser window.
 	mainWindow = new BrowserWindow({width: 800, height: 600});
