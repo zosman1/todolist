@@ -11,12 +11,12 @@ export default class InputBox extends React.Component{
 
 	handleChange(event) {
 		this.setState({value: event.target.value});
-		console.warn(this.state.value);
+		// console.warn(this.state.value);
 	}
 
 	handleSubmit(event) {
 		this.props.addtodo(this.state.value);
-		console.warn("A name was submitted: " + this.state.value);
+		// console.warn("A name was submitted: " + this.state.value);
 		this.setState({value: ""});
 		event.preventDefault();
 	}

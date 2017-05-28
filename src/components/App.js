@@ -3,32 +3,39 @@ import React, { Component } from "react";
 import TodoList from "./todos";
 import InputBox from "./InputBox";
 
-const todos = [
-	{
-		title: "Dumbass"
-	}, 
-	{ 
-		title: "Do your work"
-	}, 
-	{
-		title: "Comp sci hmwk"
+
+class Hello extends React.Component {
+	constructor() {
+		super();
+		this.addTodo = this.addTodo.bind(this);
+		this.state = {
+			todos: [
+				{
+					title: "Dumbass"
+				},
+				{
+					title: "Do your work"
+				},
+				{
+					title: "Comp sci hmwk"
+				}
+		]};
 	}
-];
-class Hello extends React.Component{
-	render() {
-		function addTodo(todoName){
-			console.warn(`function addTodo run with todoName: ${todoName}`);
-			todos.push({
+	addTodo(todoName) {
+		this.setState({
+			todos: this.state.todos.concat({
 				title: todoName
-			});
-			console.warn(todos);
-		}
-		return(
-      <div> 
-        <h1>Hello, {this.props.name}!</h1>
-        <InputBox addtodo={addTodo}/>
-        <TodoList todos={todos}/>
-      </div>
+			})
+		});
+	}
+
+	render() {
+		return (
+			<div>
+				<h1>Hello, {this.props.name}!</h1>
+				<InputBox addtodo={this.addTodo} />
+				<TodoList todos={this.state.todos} />
+			</div>
 		);
 	}
 }
