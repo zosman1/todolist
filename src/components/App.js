@@ -7,7 +7,6 @@ function searchTitle(array, title) {
 	for (var index = 0; index < array.length; index++) {
 		// var element = array[index];
 		if (array[index].title == title){
-			console.warn('searchTitle has been run annd has returned index: '+ index);
 			return index;
 		}
 	}
