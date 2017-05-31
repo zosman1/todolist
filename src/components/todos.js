@@ -9,7 +9,6 @@ export default class Todos extends React.Component{
 	}
 
 	handleSubmit(event, element) {
-		console.log("HandleSubmit for todos.js has been run. value: " + element + "; title: " + element.title);
 		this.props.removeTodo(element);
 	}
 
