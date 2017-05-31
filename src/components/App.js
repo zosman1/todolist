@@ -31,11 +31,11 @@ class Hello extends React.Component {
 			]};
 	}
 	addTodo(todoName) {
+		if (todoName == ""){return;}
 		// console.warn(this.state.todos);
+		this.state.todos.unshift({title:todoName});
 		this.setState({
-			todos: this.state.todos.concat({
-				title: todoName
-			})
+			todos: this.state.todos
 		});
 
 	}
