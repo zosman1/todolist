@@ -32,23 +32,22 @@ class Hello extends React.Component {
 	}
 	addTodo(todoName) {
 		if (todoName == ""){return;}
-		// console.warn(this.state.todos);
 		this.state.todos.unshift({title:todoName});
 		this.setState({
 			todos: this.state.todos
 		});
 
 	}
-	removeTodo(todoName) {
-		let index = searchTitle(this.state.todos, todoName);
-		if (index > -1) {
-			this.state.todos.splice(index, 1);
-			this.setState({
-				todos: this.state.todos
-			});
-		} else {
-			console.warn("on removeTodo the selected value to remove does not exist.");
+	removeTodo(element) {
+		let index = this.state.todos.indexOf(element);
+		if (index == -1) {
+			console.warn("The element to remove was not found in function removeTodo()"); 
+			return;
 		}
+		this.state.todos.splice(index, 1);
+		this.setState({
+			todos: this.state.todos
+		});
 	}
 
 	render() {

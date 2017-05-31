@@ -8,9 +8,9 @@ export default class Todos extends React.Component{
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
-	handleSubmit(event, title) {
-		console.log("HandleSubmit for todos.js has been run. value: " + title);
-		this.props.removeTodo(title);
+	handleSubmit(event, element) {
+		console.log("HandleSubmit for todos.js has been run. value: " + element + "; title: " + element.title);
+		this.props.removeTodo(element);
 	}
 
 
@@ -21,7 +21,7 @@ export default class Todos extends React.Component{
 				this.props.todos.map((element) => {
 					return (
 						<div>
-							<button onClick={(event) => this.handleSubmit(event, element.title)}><FontAwesome name="times-circle"/></button> {element.title}
+							<button onClick={(event) => this.handleSubmit(event, element)}><FontAwesome name="times-circle"/></button> {element.title}
 							</div>
 					);
 				})
