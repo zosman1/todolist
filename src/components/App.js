@@ -3,15 +3,6 @@ import React, { Component } from "react";
 import TodoList from "./todos";
 import InputBox from "./InputBox";
 
-function searchTitle(array, title) {
-	for (var index = 0; index < array.length; index++) {
-		// var element = array[index];
-		if (array[index].title == title){
-			return index;
-		}
-	}
-	return -1;
-}
 class Hello extends React.Component {
 	constructor() {
 		super();
@@ -53,9 +44,11 @@ class Hello extends React.Component {
 	render() {
 		return (
 			<div>
-				<h1>Hello, {this.props.name}!</h1>
-				<InputBox addtodo={this.addTodo} />
-				<TodoList todos={this.state.todos} removeTodo={this.removeTodo}/>
+				<h1>TodoList</h1>
+				<div className="mainTodo">
+					<InputBox addtodo={this.addTodo} />
+					<TodoList todos={this.state.todos} removeTodo={this.removeTodo}/>
+				</div>
 			</div>
 		);
 	}

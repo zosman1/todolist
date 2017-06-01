@@ -23,13 +23,10 @@ export default class InputBox extends React.Component{
 
 	render() {
 		return (
-        <form onSubmit={this.handleSubmit}>
-            <label>
-            Name:
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-            </label>
-            <input type="submit" value="Submit" onClick={this.handleSubmit}/>
-        </form>
+			<form onSubmit={this.handleSubmit}>
+				<input className="inputBox"  type="text" value={this.state.value} onChange={this.handleChange} placeholder="Todo"/>
+				<input type="submit" value="Submit" onClick={this.handleSubmit}/>
+			</form>
 		);
 	}
 }
